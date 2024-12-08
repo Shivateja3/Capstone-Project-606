@@ -56,7 +56,7 @@ The dataset is a collection of news articles available through the link [Dataset
   Number of columns: 4
 
    
-# 5.Data 
+# Data 
 
 ``` python
 fake_data.head()
@@ -78,25 +78,95 @@ read_data.info()
 ```
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/4.png)
 
+# Data Preprocessing
 
+## 1. Concatenation of Datasets:
+The dataset is initially segregated into two CSV files: **Fake.csv** and **Real.csv**. The process involves merging them and introducing a target variable: assigning 0 to Fake News and 1 to True/Real News.
+
+
+## 2.Checking for Null Values:
+Upon combining the dataset, it is confirmed that there are no null values present.
+
+
+## Text Cleaning Process
+
+ ## 1. Noise Removal:
+   Stripped text of formatting, including HTML tags, special characters, and emojis, to focus solely on the textual content.
+
+ ## 2. Lowercasing:
+   Converted all text to lowercase to maintain consistency; for example, "Hello" and "hello" were treated as the same word for analysis.
+
+ ## 3. Punctuation Removal:
+   Discarded punctuation marks from the text, as they typically don't convey significant semantic meaning.
+
+ ## 4. Stopwords Removal:
+   Removed common words like "is", "and", "the", etc., known as stopwords, which often don't contribute much to the text's meaning.
+
+ ## 5.Numbers Removal:
+   Eliminated numerical values or converted them into textual representations, as they might not be relevant for the analysis.
+
+# Preprocessing Steps in NLP
+
+## 1. Tokenization:
+
+**Sentence Tokenization:** Divided the text into individual sentences.
+
+**Word Tokenization:** Split the text into individual words or tokens.
+
+## 2. Stemming:
+
+Reduced words to their base form (e.g., "running" to "run").
+
+## 3. Lemmatization:
+
+Mapped contextually linked words with similar meanings to a single word (e.g., "better" to "good").
+
+## 4. Word2Vec Embeddings:
+
+Word2Vec maps words into a dense vector space, capturing semantic meanings based on their context in the corpus.
+Converted sentences to their average word vector representations using a Word2Vec model.
+
+
+# Exploratory Data Analysis
+
+###  1. Frequency of Subjects 
+
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/dv1.png)
+
+T﻿his bar graph illustrates the distribution of subject frequencies within the dataset, highlighting "US News" and "Politics" as the most prevalent subjects. 
+
+### 2. Donut Chart of Categories
+
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/dv2.png)
+ 
+The Donut chart illustrates the distribution of real and fake data in the dataset, showcasing a fair balance between the two categories.
+
+### 3. Timeline Visualization of  Fake and Real News Articles:
+
+
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/dv3.png)
+ 
+
+The above graph demonstrates the connection between article counts and their release dates. Notably, there is a significant increase in articles during May and June of 2016. Additionally, a spike in articles is observed towards late 2017.
+
+### 4. Distribution of Article Lengths by Category
+
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/5.png)
+ 
  
 
 
-### 5. Word Cloud 
+### Word Cloud 
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/7face6f4-b0a2-467d-b4d7-c8481c8efcbe)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/6.png)
 
 From the word cloud, we can observe that the most commonly used words in fake news articles seem to be "said", "Donald Trump", "American", "people", "that", "according", "support", "action", "women”,  "Hillary Clinton".
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/ccafd248-a823-4ce0-be58-24b4111a80dc)
-
-From the word cloud, we can observe that the most commonly used words in real  news articles seem to be "said", "Donald Trump", "percent ", "people", "that", "united state ", "support", "action", "wednesday”,  "whitehouse" ,”government”.
-
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/a7967b24-ea1e-499d-ab02-4db9ceb30a6b)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/wc2.png)
 
 From the  above visualization , it's evident that articles categorized as true tend to have a greater average word length compared to those categorized as fake. Typically, individuals fabricating information tend to employ numerous articles and prepositions. Conversely, individuals conveying truthful information often exhibit greater articulateness and conciseness in their language use . Therefore, the conclusion drawn from the visualization, indicating that true news articles have a shorter average word length, appears to be valid.
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/d4c04660-f22f-4630-bccd-32636af232ba)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/wc3.png)
 
 The above graphs reveal that fake texts generally contain more characters and words per article, thereby supporting the hypothesis established by the preceding visualization.
 
@@ -106,7 +176,7 @@ N-gram analysis involves breaking down text into sequences of N consecutive word
 
 #### Bi-Gram Analysis
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/9b09a7bf-25be-4e8d-a45d-ca8fc8c0144e)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/BiGram.png)
 
 
 Upon analyzing **bi-gram** in news titles, distinct patterns emerge between fake and true news datasets.
@@ -118,7 +188,7 @@ Conversely, in true news titles, 'White House' dominates with 734 appearances, h
 
 #### Tri-Gram Analysis
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/c36c7b23-532f-4074-b2e2-45785e15e2ca)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/TRiGram.png)
 
 Upon analyzing **tri-gram** in news titles, distinct patterns emerge between fake and true news datasets.
 
@@ -161,13 +231,13 @@ Since this task involves classification, the chosen models are classifiers, incl
 3. ROC curve and Area Under the Curve (AUC) to measure version overall performance.
 4. Stores the results for each version with Word2Vec capabilities in a dictionary named **res**.
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/a40494ee-119c-44dd-92dc-7c0d3cb5ea9f)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/M1.png)
 
  From the above output Logistic Regression, Linear SVM, and Random Forest classifiers exhibit strong overall performance, as evidenced by their high F1 scores exceeding 0.96. These classifiers demonstrate effective classification ability, with minimal misclassifications as indicated by their respective confusion matrices. While Decision Tree and Gradient Boosting classifiers show slightly lower F1 scores, around 0.92 and 0.95 respectively, they still demonstrate respectable performance, with slightly higher false positive rates. Overall, the results indicate that Logistic Regression, Linear SVM, and Random Forest classifiers perform exceptionally well in this classification task using Word2Vec embeddings, with Decision Tree and Gradient Boosting classifiers offering competitive performance.
 
 ## ROC Curve Visualization:
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/e69fe8e9-83e5-4bf1-aad8-0cd1bfaf6a4f)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/F1.png)
 
 The ROC curve is a graphical representation of the True Positive Rate (TPR) against the False Positive Rate (FPR) , we can see the the graph of Logistic regression , Linear svm and Random forest approaching the top-left corner of the plot, suggesting strong discriminative ability between positive and negative instances. 
 
@@ -203,9 +273,7 @@ The AUC values for Logistic Regression, Linear SVM, and Random Forest are around
 
 ## Future Work
 
-1. Explore transformer-based models such as BERT and GPT to capture contextual information and improve the model's understanding of complex language patterns, potentially enhancing its accuracy in detecting subtle forms of fake news.
+1. Experiment with ensemble methods to combine multiple models (e.g., logistic regression, random forest) for enhanced predictive performance and model robustness against various types of deceptive content.
 
-2. Experiment with ensemble methods to combine multiple models (e.g., logistic regression, random forest) for enhanced predictive performance and model robustness against various types of deceptive content.
-
-3. Develop mechanisms for real-time monitoring and continuous model updates with new data to adapt to evolving fake news patterns and ensure model relevancy over time. This iterative approach contributes to the ongoing battle against misinformation in the digital landscape.
+2. Develop mechanisms for real-time monitoring and continuous model updates with new data to adapt to evolving fake news patterns and ensure model relevancy over time. This iterative approach contributes to the ongoing battle against misinformation in the digital landscape.
 
