@@ -62,14 +62,23 @@ The dataset is a collection of news articles available through the link [Dataset
 fake_data.head()
 ```
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/52a77b10-a4a8-4c7f-9654-2589ce98e188)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/1.png)
 
 ``` python
 fake_data.info()
 ```
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/d8374bca-86b1-4370-8011-76fd8286f86b)
-![image](https://github.com/UMBC-1/Capstone-Project/assets/57500152/3abb395c-9289-440d-87aa-189f1e4aa320)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/2.png)
+``` python
+read_data.head()
+```
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/3.png)
+``` python
+read_data.info()
+```
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/4.png)
+
+
  
 
 
