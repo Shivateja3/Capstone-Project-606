@@ -218,11 +218,13 @@ Average word vector representation is a method used in natural language processi
 
 # Model Preparation
 
-Since this task involves classification, the chosen models are classifiers, including **Logistic Regression**, **Linear SVM**, **Random Forest**, **Decision Tree**, and **Gradient Boosting**. Google Colab served as the development environment due to its convenience in importing packages. For testing and validation, 20% and 10% of the dataset were utilized
+Since this task involves classification, the chosen models are classifiers, including **Logistic Regression**, **Linear SVM**, **Random Forest**, **Decision Tree**, and **Gradient Boosting** and **GPT3**. Google Colab served as the development environment due to its convenience in importing packages. For testing and validation, 20% and 10% of the dataset were utilized
 
 ## 10. Classifier Evaluation:
 
  Created a function  which evaluates the performance of multiple classifiers using word embeddings (Word2Vec) on a test dataset. It trains each classifier, makes predictions on the test dataset and calculates evaluation metrics and stores them in a dictionary. 
+ 
+ The project evaluated multiple models, each with distinct characteristics and strengths for text classification tasks. Logistic Regression served as a reliable baseline model, demonstrating effectiveness for high-dimensional sparse data. Linear SVM showcased its robustness in handling text data with its margin-based classification approach. Random Forest, as an ensemble method, effectively captured complex patterns while maintaining interpretability. Decision Tree provided insights into decision-making paths, although its generalization was limited compared to ensemble methods. Gradient Boosting demonstrated its ability to capture non-linear relationships through iterative learning. Finally, GPT-3, with its advanced generative capabilities, offered contextual analysis and nuanced language handling, enhancing the interpretability of text classification results.
 
 ##  Assessment metrics:
 
@@ -233,25 +235,17 @@ Since this task involves classification, the chosen models are classifiers, incl
 
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/M1.png)
 
- From the above output Logistic Regression, Linear SVM, and Random Forest classifiers exhibit strong overall performance, as evidenced by their high F1 scores exceeding 0.96. These classifiers demonstrate effective classification ability, with minimal misclassifications as indicated by their respective confusion matrices. While Decision Tree and Gradient Boosting classifiers show slightly lower F1 scores, around 0.92 and 0.95 respectively, they still demonstrate respectable performance, with slightly higher false positive rates. Overall, the results indicate that Logistic Regression, Linear SVM, and Random Forest classifiers perform exceptionally well in this classification task using Word2Vec embeddings, with Decision Tree and Gradient Boosting classifiers offering competitive performance.
-
+ The analysis revealed that combining machine learning models with Word2Vec embeddings effectively detects fake news. Logistic Regression and Linear SVM were the top-performing models, both achieving an accuracy of 97% and F1-scores of 0.97, indicating their reliability in classification tasks. GPT-3 also performed comparably, with the added advantage of contextual understanding and interpretability. Gradient Boosting, Random Forest, and Decision Tree models demonstrated varying degrees of success, with Gradient Boosting achieving 95% accuracy, underscoring the strengths of ensemble methods. 
 ## ROC Curve Visualization:
 
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/F1.png)
 
-The ROC curve is a graphical representation of the True Positive Rate (TPR) against the False Positive Rate (FPR) , we can see the the graph of Logistic regression , Linear svm and Random forest approaching the top-left corner of the plot, suggesting strong discriminative ability between positive and negative instances. 
-
-The AUC represents the area under the ROC curve and summarizes the performance of the classifier across all possible threshold settings.
-
-AUC ranges from 0 to 1, where a higher value indicates better performance. 
-
-The AUC values for Logistic Regression, Linear SVM, and Random Forest are around 0.96, indicating their high True Positive Rate (TPR) and relatively low False Positive Rate (FPR).
-
+The Receiver Operating Characteristic (ROC) Curve provides a visual representation of model performance by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) across varying classification thresholds. The ROC curves reveal that Logistic Regression, Linear SVM, Random Forest, and Gradient Boosting achieved near-perfect performance, with Area Under the Curve (AUC) values close to 0.99, highlighting their ability to effectively distinguish between fake and real news. In contrast, the Decision Tree model, with an AUC of 0.92, exhibited comparatively weaker performance, demonstrating limited generalization. The high AUC values for most models affirm the robustness of Word2Vec embeddings and the classification techniques employed. This comparison emphasizes the reliability of the selected models for detecting misinformation, with Logistic Regression and Linear SVM showcasing near identical and consistent results.  
  # 11. Deploying the Model Using Streamlit
 
- Streamlit was employed to develop a web application, This includes a text input field and a submit button, enabling users to input text for analysis. Upon submission, the model processes it using pre-trained models and provides real-time predictions on whether the news is fake or real. This interactive functionality not only enhances user accessibility to the model but also offers immediate feedback on the authenticity of news content, demonstrating the practical utility of machine learning models in real-world scenarios.
+Streamlit was used to create a web application incorporating Logistic Regression, Linear SVM, and GPT-3 models for fake news detection. The app allows users to input text, select a model, and receive real-time probabilities indicating whether the news is fake or real. This interactive tool enhances user accessibility and provides immediate feedback on news credibility, demonstrating the practical application of combining traditional machine learning and advanced transformer-based models like GPT-3 to tackle misinformation. 
 
-## Fake News 
+## Some Images of the ouput
 
 ![image](https://github.com/UMBC-1/Capstone-Project/assets/119750555/8d4cd959-18ac-4df2-8e1d-2fd158408bef)
 
