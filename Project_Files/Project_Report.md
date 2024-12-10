@@ -80,48 +80,48 @@ read_data.info()
 
 # Data Preprocessing
 
-## 1. Concatenation of Datasets:
+### 1. Concatenation of Datasets:
 The dataset is initially segregated into two CSV files: **Fake.csv** and **Real.csv**. The process involves merging them and introducing a target variable: assigning 0 to Fake News and 1 to True/Real News.
 
 
-## 2.Checking for Null Values:
+### 2.Checking for Null Values:
 Upon combining the dataset, it is confirmed that there are no null values present.
 
 
 ## Text Cleaning Process
 
- ## 1. Noise Removal:
+ ### 1. Noise Removal:
    Stripped text of formatting, including HTML tags, special characters, and emojis, to focus solely on the textual content.
 
- ## 2. Lowercasing:
+ ### 2. Lowercasing:
    Converted all text to lowercase to maintain consistency; for example, "Hello" and "hello" were treated as the same word for analysis.
 
- ## 3. Punctuation Removal:
+ ### 3. Punctuation Removal:
    Discarded punctuation marks from the text, as they typically don't convey significant semantic meaning.
 
- ## 4. Stopwords Removal:
+ ### 4. Stopwords Removal:
    Removed common words like "is", "and", "the", etc., known as stopwords, which often don't contribute much to the text's meaning.
 
- ## 5.Numbers Removal:
+ ### 5.Numbers Removal:
    Eliminated numerical values or converted them into textual representations, as they might not be relevant for the analysis.
 
 # Preprocessing Steps in NLP
 
-## 1. Tokenization:
+### 1. Tokenization:
 
 **Sentence Tokenization:** Divided the text into individual sentences.
 
 **Word Tokenization:** Split the text into individual words or tokens.
 
-## 2. Stemming:
+### 2. Stemming:
 
 Reduced words to their base form (e.g., "running" to "run").
 
-## 3. Lemmatization:
+### 3. Lemmatization:
 
 Mapped contextually linked words with similar meanings to a single word (e.g., "better" to "good").
 
-## 4. Word2Vec Embeddings:
+### 4. Word2Vec Embeddings:
 
 Word2Vec maps words into a dense vector space, capturing semantic meanings based on their context in the corpus.
 Converted sentences to their average word vector representations using a Word2Vec model.
@@ -170,11 +170,11 @@ From the  above visualization , it's evident that articles categorized as true t
 
 The above graphs reveal that fake texts generally contain more characters and words per article, thereby supporting the hypothesis established by the preceding visualization.
 
-### 6.  N GRAM Analysis
+##  N GRAM Analysis
 
 N-gram analysis involves breaking down text into sequences of N consecutive words and then analyzing the frequency and patterns of these sequences. This technique is widely used in natural language processing tasks such as language modeling, text generation, and sentiment analysis. By examining the occurrence and co-occurrence of these sequences, N-gram analysis can provide insights into the structure and patterns of language, helping to identify common phrases, expressions within a body of text.
 
-#### Bi-Gram Analysis
+### Bi-Gram Analysis
 
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/BiGram.png)
 
@@ -186,7 +186,7 @@ In fake news titles, 'Donald Trump' appears 547 times, showing a strong focus on
 Conversely, in true news titles, 'White House' dominates with 734 appearances, highlighting the importance of political coverage and government affairs in real news. 'North Korea' comes second with 578 appearances, indicating a significant focus on international relations and geopolitical developments.
 
 
-#### Tri-Gram Analysis
+### Tri-Gram Analysis
 
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/TRiGram.png)
 
@@ -198,7 +198,7 @@ On the other hand, tri-grams found in genuine news articles containing phrases l
 
 Tri-grams in fake news articles may include misleading phrases like 'To Vote For', aiming to manipulate readers' perceptions or influence their behavior. This underscores the deceptive nature inherent in fabricated news narratives.
 
-# 9. Model Development 
+# Model Development 
 
 
 ## Parallel Processing :
@@ -220,7 +220,7 @@ Average word vector representation is a method used in natural language processi
 
 Since this task involves classification, the chosen models are classifiers, including **Logistic Regression**, **Linear SVM**, **Random Forest**, **Decision Tree**, and **Gradient Boosting** and **GPT3**. Google Colab served as the development environment due to its convenience in importing packages. For testing and validation, 20% and 10% of the dataset were utilized
 
-## 10. Classifier Evaluation:
+## Classifier Evaluation:
 
  Created a function  which evaluates the performance of multiple classifiers using word embeddings (Word2Vec) on a test dataset. It trains each classifier, makes predictions on the test dataset and calculates evaluation metrics and stores them in a dictionary. 
  
@@ -241,7 +241,7 @@ Since this task involves classification, the chosen models are classifiers, incl
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res5.png)
 
 The Receiver Operating Characteristic (ROC) Curve provides a visual representation of model performance by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) across varying classification thresholds. The ROC curves reveal that Logistic Regression, Linear SVM, Random Forest, and Gradient Boosting achieved near-perfect performance, with Area Under the Curve (AUC) values close to 0.99, highlighting their ability to effectively distinguish between fake and real news. In contrast, the Decision Tree model, with an AUC of 0.92, exhibited comparatively weaker performance, demonstrating limited generalization. The high AUC values for most models affirm the robustness of Word2Vec embeddings and the classification techniques employed. This comparison emphasizes the reliability of the selected models for detecting misinformation, with Logistic Regression and Linear SVM showcasing near identical and consistent results.  
- # 11. Deploying the Model Using Streamlit
+ # Deploying the Model Using Streamlit
 
 Streamlit was used to create a web application incorporating Logistic Regression, Linear SVM, and GPT-3 models for fake news detection. The app allows users to input text, select a model, and receive real-time probabilities indicating whether the news is fake or real. This interactive tool enhances user accessibility and provides immediate feedback on news credibility, demonstrating the practical application of combining traditional machine learning and advanced transformer-based models like GPT-3 to tackle misinformation. 
 
@@ -253,7 +253,7 @@ Streamlit was used to create a web application incorporating Logistic Regression
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res3.png)
 
 
-# 12.Conclusion
+# Conclusion
 
 The study successfully demonstrated the effectiveness of machine learning models, including Logistic Regression, Linear SVM, and Gradient Boosting, in detecting fake news with high accuracy and reliability, supported by Word2Vec embeddings for contextual text representation. GPT-3 further added value through its advanced interpretability and linguistic capabilities. The analysis revealed that Logistic Regression and Linear SVM are particularly effective for text classification tasks, achieving AUC scores of 0.99, while Decision Tree models struggled with nuanced content. 
 
