@@ -233,12 +233,12 @@ Since this task involves classification, the chosen models are classifiers, incl
 3. ROC curve and Area Under the Curve (AUC) to measure version overall performance.
 4. Stores the results for each version with Word2Vec capabilities in a dictionary named **res**.
 
-![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/M1.png)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res4.png)
 
  The analysis revealed that combining machine learning models with Word2Vec embeddings effectively detects fake news. Logistic Regression and Linear SVM were the top-performing models, both achieving an accuracy of 97% and F1-scores of 0.97, indicating their reliability in classification tasks. GPT-3 also performed comparably, with the added advantage of contextual understanding and interpretability. Gradient Boosting, Random Forest, and Decision Tree models demonstrated varying degrees of success, with Gradient Boosting achieving 95% accuracy, underscoring the strengths of ensemble methods. 
 ## ROC Curve Visualization:
 
-![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/F1.png)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res5.png)
 
 The Receiver Operating Characteristic (ROC) Curve provides a visual representation of model performance by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) across varying classification thresholds. The ROC curves reveal that Logistic Regression, Linear SVM, Random Forest, and Gradient Boosting achieved near-perfect performance, with Area Under the Curve (AUC) values close to 0.99, highlighting their ability to effectively distinguish between fake and real news. In contrast, the Decision Tree model, with an AUC of 0.92, exhibited comparatively weaker performance, demonstrating limited generalization. The high AUC values for most models affirm the robustness of Word2Vec embeddings and the classification techniques employed. This comparison emphasizes the reliability of the selected models for detecting misinformation, with Logistic Regression and Linear SVM showcasing near identical and consistent results.  
  # 11. Deploying the Model Using Streamlit
@@ -247,27 +247,24 @@ Streamlit was used to create a web application incorporating Logistic Regression
 
 ## Some Images of the ouput
 
-![image](https://github.com/UMBC-1/Capstone-Project/assets/119750555/8d4cd959-18ac-4df2-8e1d-2fd158408bef)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res1.png)
 
 
 ## Real News
 
-![true](https://github.com/UMBC-1/Capstone-Project/assets/119750555/b47b2ea2-20f2-41b5-832b-13349c15efa3)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res2.png)
+![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res3.png)
 
 
 # 12.Conclusion
 
-## Limitations 
+The study successfully demonstrated the effectiveness of machine learning models, including Logistic Regression, Linear SVM, and Gradient Boosting, in detecting fake news with high accuracy and reliability, supported by Word2Vec embeddings for contextual text representation. GPT-3 further added value through its advanced interpretability and linguistic capabilities. The analysis revealed that Logistic Regression and Linear SVM are particularly effective for text classification tasks, achieving AUC scores of 0.99, while Decision Tree models struggled with nuanced content. 
 
-1. Relying solely on Word2Vec embeddings may limit the system's adaptability to evolving forms of fake news that differ significantly from the training data. This could lead to reduced performance in detecting novel deceptive tactics.
+## Recommendations
 
-2. The computational resources required for training and maintaining sophisticated models, especially at scale for real-world deployment, can be substantial and costly. This includes the need for robust infrastructure and significant financial investments to ensure efficient operation and scalability.
-
-3. Ensuring data quality and addressing biases in training data are essential for model fairness and generalizability. Failure to adequately address these concerns may result in biased predictions and undermine the model's effectiveness in diverse real-world scenarios.
+ To enhance fake news detection, hybrid models that combine the interpretability of GPT-3 with the precision of traditional classifiers are suggested. Additionally, deploying this solution as an interactive web application, as implemented, could allow users to easily verify the credibility of news articles. A focus on improving models' handling of sarcasm, figurative language, and complex writing styles is also recommended. 
 
 ## Future Work
 
-1. Experiment with ensemble methods to combine multiple models (e.g., logistic regression, random forest) for enhanced predictive performance and model robustness against various types of deceptive content.
-
-2. Develop mechanisms for real-time monitoring and continuous model updates with new data to adapt to evolving fake news patterns and ensure model relevancy over time. This iterative approach contributes to the ongoing battle against misinformation in the digital landscape.
+Expanding the analysis to include multilingual datasets could address fake news in diverse linguistic contexts. Incorporating advanced embeddings like BERT or GPT-4 could further refine detection capabilities. Finally, integrating the system with real-time news feeds and APIs would ensure practical applicability in combating misinformation at scale.
 
