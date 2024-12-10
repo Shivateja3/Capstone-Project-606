@@ -249,9 +249,6 @@ Streamlit was used to create a web application incorporating Logistic Regression
 
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res1.png)
 
-
-## Real News
-
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res2.png)
 ![image](https://github.com/Shivateja3/Capstone-Project-606/blob/main/Project_Images/res3.png)
 
