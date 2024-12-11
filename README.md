@@ -2,5 +2,5 @@
 Identifying Misinformation in News Articles Using NLP and Machine Learning
 
 # Team Members
-Vanam Koushal
+Vanam Koushal,
 Shiva Teja Chintala
