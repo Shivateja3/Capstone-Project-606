@@ -3,6 +3,10 @@
 
 Our project is titled "Identifying Misinformation in News Articles Using NLP and Machine Learning." We aim to use natural language processing techniques and machine learning models to build a system that can detect and classify fake news articles. We'll preprocess news data and apply machine learning models to classify articles as real or fake, with plans to deploy the model as a web application for user interaction
 
+## Aim of the project
+
+How can Natural Language Processing (NLP) and Machine Learning (ML) techniques be used to effectively detect and classify misinformation in news articles? 
+
 
 ## Introduction
 
